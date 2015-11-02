@@ -1,0 +1,11 @@
+<!-- 单选radio组模版 -->
+<div class="ee-ui-radio-group over-hidden">
+    <div class="radio-single pull-left">
+        <input type="radio" value="0" ng-model="actionEdit.data.isControlRole"/>
+        <label class="radio-name">否</label>
+    </div>
+    <div class="radio-single pull-left">
+        <input type="radio" value="1" ng-model="actionEdit.data.isControlRole"/>
+        <label class="radio-name">是</label>
+    </div>
+</div>

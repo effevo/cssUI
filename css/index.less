@@ -1,0 +1,504 @@
+@import "_variable";
+@import "_reset";
+@import "_issue";
+@import "_package";
+@import "_global";
+@import "_eeMixIn";
+
+
+/*ui-router 页面切换动效*/
+.ee-animate-enter.ng-enter {
+    /*position: absolute;*/
+    /*left: 10%;*/
+    /*top: 42px;*/
+    -webkit-transition:all .25s ease-in-out;
+    -moz-transition:all .25s ease-in-out;
+    -o-transition:all .25s ease-in-out;
+    transition:all .25s ease-in-out;
+}
+
+.ee-animate-enter.ng-enter {
+    animation: my_fade_in_animation .5s ease-in-out;
+    -webkit-animation: my_fade_in_animation .5s ease-in-out;
+}
+
+/*#ee-content-out.ng-leave {*/
+    /*animation: my_fade_animation 0.5s linear;*/
+    /*-webkit-animation: my_fade_animation 0.5s linear;*/
+/*}*/
+
+@keyframes my_fade_animation {
+    from {
+        transform: translateX(0%);
+        opacity:1;
+    }
+    to {
+        transform: translateX(-5%);
+        opacity:0;
+    }
+}
+
+@-webkit-keyframes my_fade_animation {
+    from {
+        transform: translateX(0%);
+        opacity:1;
+    }
+    to {
+        transform: translateX(-5%);
+        opacity:0;
+    }
+}
+
+@keyframes my_fade_in_animation {
+    from {
+        transform: translateY(10px);
+        opacity:0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity:1;
+    }
+}
+
+@-webkit-keyframes my_fade_in_animation {
+    from {
+        transform: translateY(10px);
+        opacity:0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity:1;
+    }
+}
+
+/*控制全局边框*/
+#ee-content-out {
+  .global-outer-return {
+    background-image: url(../img/return.png);
+    position: absolute;
+    height: 133px;
+    width: 39px;
+    background-repeat: no-repeat;
+    top: 0;
+    left: -39px;
+    cursor: pointer;
+    display: none;
+    z-index: 0;
+
+    &:hover {
+      background-image: url(../img/return-hover.png);
+    }
+  }
+
+  .global-border {
+    .left-border {
+      position: absolute;
+      height: 100%;
+      width: 2px;
+      background-image: url(/app/appIndex/img/shadow-left.png);
+      background-repeat: repeat-y;
+      top: 0;
+      left: -2px;
+    }
+
+    .right-border {
+      position: absolute;
+      height: 100%;
+      width: 2px;
+      background-image: url(/app/appIndex/img/shadow-right.png);
+      background-repeat: repeat-y;
+      top: 0;
+      right: -2px;
+    }
+
+    .top-border {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background: #e6e6e6;
+      top: -1px;
+    }
+
+    .bottom-border {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-image: url(/app/appIndex/img/shadow-down.png);
+      background-repeat: repeat-x;
+      bottom: 0px;
+    }
+  }
+}
+
+
+/*页面loading效果*/
+#top-loading {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+
+    .ee-global-loading {
+      width: 160px;
+      height: 80px;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      .transform(translate(-50%,-50%));
+    }
+
+    .loading-out-control {
+      width: 100%;
+      text-align: center;
+
+      .logo {
+        background-image: url(../../../public/img/logo/logo-text-200.png);
+        width: 150px;
+        background-size: contain;
+        height: 58px;
+        background-repeat: no-repeat;
+      }
+
+      .loading-bounce {
+        background-image: url(../../../public/img/ee-loading-blue.gif);
+        height: 35px;
+        margin-left: -55px;
+        background-repeat: no-repeat;
+      }
+
+      .loading-point {
+        width: 10px;
+        height: 10px;
+        background-color: #3c6387;
+        display: inline-block;
+        -webkit-animation: bouncedelay .48s infinite ease-in-out;
+        animation: bouncedelay .48s infinite ease-in-out;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+
+      .bounce1 {
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+      }
+
+      .bounce2 {
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+      }
+
+      @-webkit-keyframes bouncedelay {
+        33% {
+          background: #fff
+        }
+        0%, 66%, 100% {
+          background: #3c6387
+        }
+      }
+
+      @keyframes bouncedelay {
+        33% {
+          background: #fff
+        }
+        0%, 66%, 100% {
+          background: #3c6387
+        }
+      }
+    }
+}
+
+
+/* bootstrap hack start*/
+.modal-content {
+    border-radius: 0px;
+}
+
+.modal-content h1, .modal-content h2, .modal-content h3, .modal-content h4, .modal-content h5, .modal-content h6 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.modal {
+    top: 50px;
+}
+
+.modal-body {
+    overflow-y: auto;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+/* bootstrap hack end*/
+
+
+/* 全局按纽样式定义 */
+[class^="ee-btn-"],
+[class*=" ee-btn-"] {
+    border-radius: 3px;
+    width: 66px;
+    height: 26px;
+    font-size: 12px;
+    line-height: 9px;
+    border: none;
+    padding: 5px 15px;
+    box-sizing: border-box;
+  cursor: pointer;
+}
+
+.ee-btn-cancel {
+    background-color: #ddd;
+}
+
+.ee-btn-cancel:hover {
+    background-color: #ccc;
+}
+
+.ee-btn-ok {
+    background-color: #3ba4e7;
+    color: #fff;
+}
+
+.ee-btn-ok:hover {
+    background-color: #288fd1;
+}
+
+.ee-msg-tips
+{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #56d120;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+
+/*select2 hacker */
+.select2-drop
+{
+    z-index: 1000000 !important;
+}
+
+.select2-container
+{
+    z-index: 102 !important;
+}
+
+.select2-drop-active
+{
+    border: 1px solid #ccc !important; 
+}
+
+.select2-search-choice div
+{
+    max-width: 100px !important;
+    overflow: hidden !important;
+    height: 14px !important;
+    font-size: 12px;
+    line-height: 13px !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+.select2-results
+{
+    padding-left: 0px !important;
+    margin-right: 0px;
+}
+
+.select2-results .select2-highlighted 
+{
+    background: #f4f4f4 !important;
+    color: #333 !important;
+}
+
+.select2-container .select2-choice
+{
+    border-radius: 0px !important;
+    background-image: none !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    border: 1px solid #ccc !important;
+    filter: none !important;
+}
+
+.select2-dropdown-open .select2-choice
+{
+    background-color: #fff !important;
+}
+
+.select2-container-active .select2-choice
+{
+    box-shadow: none !important;
+}
+
+.select2-container .select2-choice .select2-arrow
+{
+    background: #fff !important;
+    border-left: none !important;
+    background-image: none !important;
+    margin-top: -2px;
+    filter: none !important;
+}
+
+.select2-container-disabled {
+  .select2-choice {
+    background-color: transparent !important;
+    border: none!important;
+    padding-left: 0 !important;
+  }
+  .select2-arrow {
+    display: none !important;
+  }
+}
+
+.select2-search input {
+  margin: 5px;
+  height: 10px !important;
+  box-shadow: none;
+  width: 96%;
+  border-radius: 0px;
+  border: 1px solid #ddd !important;
+  box-shadow: none !important;
+
+  &:focus,&:focused {
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+  }
+  &:hover {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+}
+
+.select2-container-multi .select2-choices {
+  background-image: none;
+  border: 1px solid #E0D9D9;
+  border-radius: 3px;
+}
+
+.select2-container-multi .select2-choices .select2-search-choice {
+  padding: 3px 18px 3px 3px;
+  border-radius: 0px;
+  border: 1px solid #bbb;
+  background-color: #eee;
+  background-image: none;
+}
+
+.select2-container .ee-icon-add {
+  margin-left: 5px;
+  font-size: 12px;
+  color: #3ba4e7;
+}
+
+.select2-container-multi .select2-search-choice-close {
+  right: 2px;
+  left: auto;
+  top: 3px;
+  opacity: .6;
+}
+
+.select2-dropdown-open.select2-drop-above .select2-choice, .select2-dropdown-open.select2-drop-above .select2-choices {
+  background-image: none;
+  border: 1px solid #ddd;
+  box-shadow: none;
+}
+
+.select2-container-multi.select2-container-active .select2-choices {
+  border: 1px solid #ddd;
+  box-shadow: none;
+}
+/* select2 hacker end*/
+
+/*bootstrap hacker*/
+.modal-backdrop
+{
+    z-index: 1000;
+}
+
+/*end bootstrap hacker*/
+
+/*datepicker hacker*/
+
+.datepicker table tr th.today:hover{
+   box-shadow: 0 3px 7px rgba(0,0,0,0.3); 
+}
+
+/*date range poicker*/
+.daterangepicker td.start-date{
+  border-radius: 20px 0 0 20px;
+}
+
+.daterangepicker td.end-date{
+  border-radius: 0 20px 20px 0;
+}
+
+/*ee-tooltip*/
+.tooltip{
+  position: fixed;
+  font-family: "Microsoft Yahei";
+  font-weight: normal;
+  font-size : 12px;
+  z-index:10000;
+}
+
+.tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 8px;
+    border-color: transparent;
+    opacity : 0.8;
+    border-style: solid;
+}
+
+.tooltip-inner {
+    max-width: 200px;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    background: #000;
+    opacity : 0.8;
+    border-radius: 4px;
+}
+
+/*通用的一些样式*/
+.ee-text-ellipsis
+{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ee-none-select
+{
+  -webkit-user-select: none;
+}
+
+.ee-absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  .transform(translate(-50%,-50%));
+}
+
+.typeahead.dropdown-menu li > a {
+  padding: 3px 10px;
+  position: relative;
+}
+
+//customer cursors
+.closedhand{
+  cursor : url(/app/appIndex/img/closedhand.cur), default !important;
+}
+
+.tooltip{
+  z-index:100000;
+  .tooltip-inner{
+    text-align:left;
+  }
+}

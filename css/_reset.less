@@ -1,0 +1,90 @@
+﻿/**
+* @description 规定浏览器原生标签默认样式
+* @author liming
+*/
+
+html,body,table {
+  overflow-y: hidden;
+  font-family: 'Microsoft YaHei',Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+body {
+  background-color: #EEE !important;
+}
+
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+  margin:0;padding:0;
+}
+
+/* html 5 tag*/
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+  display:block;
+}
+
+fieldset,img{
+  border:0;
+}
+
+/*统一滚动条样式定义*/
+::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border-radius: 10px;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+    /*background: #f1f1f1;*/
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #c8c8c8;
+}
+
+/* 去掉列表前的标识, li 会继承 */
+ol,ul {
+  list-style:none;
+}
+
+/* 统一上标和下标 */
+sub, sup {
+  font-size: 75%; line-height: 0; position: relative; vertical-align: baseline;
+}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+
+/*去掉input默认发光效果*/
+input:focus, 
+input:active,
+textarea:focus,
+textarea:active {
+    box-shadow: none;
+    line-height: 20px;
+}
+
+input[type="text"]:focus, 
+input[type="text"]:active, 
+input[type="password"]:focus, 
+input[type="password"]:active {
+    box-shadow: none;
+}
+
+input,textarea {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px;
+  font-family: 'microsoft yahei';
+  border: 1px solid #D6D4D4;
+}
+
+input:focus, textarea:focus,input:active {
+  outline: 0;
+  border: 1px solid #3aa5e6;
+}
+
+button{
+	cursor: pointer;
+}
+

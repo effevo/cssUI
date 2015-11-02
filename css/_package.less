@@ -1,0 +1,48 @@
+/*
+* add liming 设置一些通用组件的样式
+*/
+
+/* 覆盖导航bootstrap nav样式 */
+.nav-tabs > li > a {
+  -webkit-border-radius: 2px 2px 0 0;
+  -moz-border-radius: 2px 2px 0 0;
+  border-radius: 2px 2px 0 0;
+  color: #666;
+}
+
+/*单选框组*/
+.ee-ui-radio-group {
+  .radio-single {
+    float: left;
+    margin-right: 10px;
+
+    input[type=radio] {
+      margin-top: 2px;
+      float: left;
+      margin-right: 4px;
+      &:checked {
+        border: 1px solid #3ba4e7;
+        &:after {
+          background: #3ba4e7;
+          box-shadow: none;
+        }
+      }
+    }
+    .radio-name {
+      display: inline-block;
+      font-weight: normal;
+    }
+  }
+}
+
+/* 全局字体定义*/
+[class^="ee-icon-"],
+[class*=" ee-icon-"] {
+  font-family: "ee-icon" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0px;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+}
