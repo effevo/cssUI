@@ -1,0 +1,27 @@
+/*author:liming*/
+/*浮层相关*/
+.layer-mask {
+    position: fixed;
+    z-index: 998;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(238, 238, 238, 0.96);
+
+    .layer-close {
+        position: fixed;
+        top: 70px;
+        right: 60px;
+        .ee-icon-close {
+            font-size: 30px;
+            color: #929292;
+            //.transition(all 0.4s linear);
+            &:hover {
+                color: @ee-var-active-color;
+            }
+        }
+    }
+}

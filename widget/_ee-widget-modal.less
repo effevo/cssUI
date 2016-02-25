@@ -1,0 +1,96 @@
+/* 改进bootstrap 样式 所有调用bootstrap modal 外层加此样式*/
+/* @author liming */
+
+.ee-widget-modal {
+    &.modal {
+        top: 0%;
+        &.in {
+            .modal-dialog {
+            }
+        }
+    }
+
+    p {
+        margin: 5px 0px;
+    }
+
+    input[type=text] {
+        padding-left: 5px;
+        width: 100%;
+        height: 25px;
+    }
+
+    textarea,.select2-container {
+        width: 100%;
+    }
+
+    .modal-dialog {
+        box-shadow: @box-shadow;
+        margin: 0px;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        .transform(translate(-50%,-49%)) !important;
+        .modal-content {
+            box-shadow: none;
+        }
+
+        .modal-header {
+            font-size: 16px;
+            margin-bottom: 1px;
+            .modal-title {
+                font-size: 16px;
+            }
+            .close {
+                margin-top: 0px;
+                &:hover {
+                    color: dodgerblue;
+                    //transform: scale(1.5);
+                }
+            }
+        }
+        .modal-body {
+            font-size: 14px;
+            color: #666;
+
+            input[type=text] {
+                height: 30px;
+                font-size: 12px;
+            }
+
+            .tips {
+                font-size: 12px;
+                color: #bbb;
+                margin-top: 10px;
+                &.red {
+                    color: #F97575;
+                }
+            }
+        }
+
+        .modal-footer {
+            text-align: right;
+            padding: 10px 15px;
+            padding-bottom: 15px;
+            border-top: none !important;
+            line-height: 25px;
+
+            [class^="ee-btn-"],
+            [class*=" ee-btn-"] {
+                margin-left: 10px;
+            }
+
+            .ee-btn {
+                margin-left: 10px;
+            }
+
+            .action {
+                line-height: 25px;
+                .ee-btn {
+                    margin-left: 10px;
+                }
+            }
+
+        }
+    }
+}

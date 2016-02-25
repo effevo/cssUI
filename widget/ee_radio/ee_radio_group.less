@@ -1,0 +1,24 @@
+/*单选框组*/
+.ee-ui-radio-group {
+    .radio-single {
+        float: left;
+        margin-right: 10px;
+
+        input[type=radio] {
+            margin-top: 2px;
+            float: left;
+            margin-right: 4px;
+            &:checked {
+                border: 1px solid #3ba4e7;
+                &:after {
+                    background: #3ba4e7;
+                    box-shadow: none;
+                }
+            }
+        }
+        .radio-name {
+            display: inline-block;
+            font-weight: normal;
+        }
+    }
+}

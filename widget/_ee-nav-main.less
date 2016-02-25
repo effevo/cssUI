@@ -1,0 +1,89 @@
+/*author: liming*/
+/*左右布局*/
+.ee-nav-main {
+    width: 100%;
+    .calc-height(~'100% - 50px');
+    background-color: #eee;
+
+    .ee-nav-left {
+        width: 229px;
+        height: 100%;
+        float: left;
+        background: #2d3d57;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        border-right: 1px solid #ddd;
+        color: #eee;
+        .transition(opacity .5s ease , width 1s ease);
+    }
+
+    .ee-nav-right {
+        float: left;
+        margin: 10px 20px;
+        border: none;
+        .calc-width(~'100% - 269px');
+        background-color: #fff;
+        height: 100%;
+        .box-shadow(0 1px 3px rgba(0,0,0,0.3));
+
+        .main-header {
+            height: 34px;
+            line-height: 32px;
+            font-size: 14px;
+            background: #f9f9fb;
+            padding: 0px 15px;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+            z-index: 998;
+
+            .ee-nav-pro-name {
+                font-weight: bold;
+            }
+
+            .nav-child {
+                position: absolute;
+                left: 50%;
+                .transform(translateX(-50%));
+                .nav-name {
+                    padding: 0px 10px;
+                    cursor: pointer;
+                }
+
+                >li {
+                    float: left;
+                    font-size: 14px;
+                    &.active,&:hover {
+                        color: @ee-var-active-color;
+                    }
+                    ul {
+                        z-index: 99;
+                        max-height: 400px;
+                        overflow-y: auto;
+                    }
+                }
+            }
+        }
+
+        .main-content {
+            .calc-height(~'100% - 45px');
+            width: 100%;
+        }
+    }
+
+    &.no-left-nav {
+        .nav-list,.product-list {
+            height: 0px;
+            padding-bottom: 0px;
+        }
+        .ee-nav-left {
+            width: 0px;
+            z-index: -11;
+            display: none;
+            opacity: 0;
+        }
+        .ee-nav-right {
+            width: 100%;
+            margin: 0px;
+        }
+    }
+}

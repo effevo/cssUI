@@ -1,0 +1,60 @@
+.ee-context-menu {
+    border: @border;
+    box-shadow: @box-shadow;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1001;
+    min-width: 160px;
+    float: left;
+    margin: 1px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+
+    padding: 5px 0px;
+
+    li {
+        >a {
+            &:hover, &:focus {
+                color: #333;
+                background-color: #eee;
+            }
+        }
+    }
+
+    >li {
+        >a {
+            display: block;
+            padding: 5px 10px;
+            clear: both;
+            font-weight: 400;
+            line-height: 1.42857143;
+            color: #333;
+            white-space: nowrap;
+
+            >i {
+                margin-right: 4px;
+            }
+        }
+    }
+
+    .ee-context-menu-disabled {
+        //background-color: #eee;
+        > a {
+            color: #777;
+            cursor: not-allowed !important;
+            &:hover, &:focus {
+                color: #777;
+                background-color: transparent;
+            }
+        }
+    }
+}

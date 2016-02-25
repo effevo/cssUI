@@ -1,0 +1,61 @@
+@import "base/index";
+
+.over-hidden { overflow: hidden; }
+.font12px {font-size: 12px;}
+.font14px {font-size: 14px;}
+.font16px {font-size: 16px;}
+.cursor-pointer {cursor: pointer}
+
+.red {color: red}
+.green {color: green}
+.black {color: black}
+
+.ee-btn-red {background-color: rgb(230,136,132);}
+
+.hover-active-input {
+	height: 25px;
+	line-height: 30px;
+	border: none;
+	margin-top: 0px;
+	margin-left: 0px;
+	-webkit-transition:none;
+	-moz-transition: none;
+	-ms-transition:none;
+	-o-transition: none;
+	transition: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	&:hover {
+		border: 1px solid #DDD !important;
+		height: 25px;
+		line-height: 30px;
+		margin-left: -1px;
+		cursor: pointer;
+	}
+
+	&:focus {
+		border: 1px solid @ee-var-active-color !important;
+		height: 25px;
+		line-height: 30px;
+		margin-left: -1px;
+		cursor: auto;
+
+		&::-webkit-input-placeholder {
+			color: #FFF!important;
+		}
+	}
+}
+
+.no-data-tip-center {
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 .transform(translate(-50%, -50%));
+	 text-align: center;
+	 color: #929292;
+	 .tip-icon {
+		 font-size: 40px;
+		 line-height: 46px;
+	 }
+ }
